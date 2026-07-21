@@ -1,10 +1,51 @@
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+
+import Login from "./pages/Login";
+import MissionControl from "./pages/MissionControl";
+import IncidentInvestigation from "./pages/IncidentInvestigation";
+import ExecutiveReport from "./pages/ExecutiveReport";
+import Simulation from "./pages/Simulation";
+import NotFound from "./pages/NotFound";
+
 function App() {
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center">
-      <h1 className="text-6xl font-bold tracking-tight text-white">
-        Kaelor
-      </h1>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={<Login />}
+        />
+
+        <Route
+          path="/mission-control"
+          element={<MissionControl />}
+        />
+
+        <Route
+          path="/investigation"
+          element={<IncidentInvestigation />}
+        />
+
+        <Route
+          path="/executive-report"
+          element={<ExecutiveReport />}
+        />
+
+        <Route
+          path="/simulation"
+          element={<Simulation />}
+        />
+
+        <Route
+          path="*"
+          element={<NotFound />}
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
